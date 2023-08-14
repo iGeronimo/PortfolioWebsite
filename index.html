@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+   
+  <body>
+    <div class="color-container-white">
+      <div class="content-container">
+        <div class="introduction">
+          <h1 class="title">
+            <span class = "headingIntro"></span>
+            <span class = "headingName">Mathijs Lehman : Portfolio</span>
+          </h1>
+          <div class="topicHeader">
+            <span class="topicHeaderType">private string</span>
+            <span class="topicHeaderName">Introduction()</span>
+          </div>
+          <p class="introAnimation">Greetings!</p>
+          <div class="intro-container">
+            <div class="intro">
+              I am
+              <span class="intro-name"><b>Mathijs Lehman</b></span>
+              a Game Developer with a love for everything that has to do with games.
+            </div>
+            <div class="game-slider">
+              Some of my favourite games:
+              <div id="current-word">
+                Pokemon
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-container-black">
+      <div class="content-container">
+        <div class="topicHeader">
+          <span class="topicHeaderType">private void</span>
+          <span class="topicHeaderName">Portfolio()</span>
+        </div>
+        <div class="project-title" data-value="HEIGHT MAPPING TERRAIN">
+          HEIGHT MAPPING TERRAIN
+        </div>
+        <div class="project-container">
+          <div class="project-image">
+            <img src="Images/OpenGLHeightMapLighting.png" alt="Image 1">
+          </div>
+          <div class="project-description">
+            A flat plane terrain mesh altered through the use of <br>
+            a black to white colored height map.<br>
+            After this the normals are recalculated through the<br>
+            adjacent vertexes heights and some lighting<br>
+            is added to make it seem a little more realistic.<br>
+            It was made with OpenGL, C++.<br>
+          </div>
+        </div>
+        <div class="project-title">
+          RAY PATH TRACING
+        </div>
+        <div class="project-container">
+          <div class="project-image">
+            <img src="Images/PathTracingNiceReflections.png" alt="Image 2">
+          </div>
+          <div class="project-description">
+            After trying out lighting a little bit with<br>
+            the height mapping in OpenGL I wanted to take<br>
+            it a step further in terms of realism.<br>
+            This scene was made in Unity and uses Path tracing<br>
+            to determine light reflections more accurately.<br>
+            In this image it shows up to 10 bounces of<br>
+            the light hitting any surface.<br>
+          </div>
+        </div>
+        <div class="project-title">
+          TCP CHATROOM
+        </div>
+        <div class="project-container">
+          <div class="project-image">
+            <img src="Images/NetworkingTCPchatroom.png" alt="Image 3">
+          </div>
+          <div class="project-description">
+            A chatroom application made in Unity that uses<br>
+            TCP and has a couple of commands to change<br>
+            your look and whisper to people close<br>
+            to you.<br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-container-white">
+      <div class="content-container">
+        <div class="topicHeader">
+          <span class="topicHeaderType">private void</span>
+          <span class="topicHeaderName">Experience()</span>
+        </div>
+        <div class="experience">
+          <div class="experience-container">
+            <div class="experience-column">
+              <div class="experience-title">
+                Languages
+              </div>
+              <div class="column-images">
+                <img src="Images/CplusplusLogo.png">
+                <img src="Images/CsharpLogo.png">
+                <img src="Images/PythonLogo.png">
+                <img src="Images/OpenGlLogo.png">
+                <img src="Images/sfmlLogo.png">
+                <img src="Images/HtmlLogo.png">
+                <img src="Images/CssLogo.png">
+              </div>
+            </div>
+            <div class="experience-column">
+              <div class="experience-title">
+                Software
+              </div>
+              <div class="column-images">
+                <img src="Images/UnityLogo.png">
+                <img src="Images/UnrealLogo.png">
+                <img src="Images/GitLogo.png">
+                <img src="Images/VScodeLogo.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-container-black">
+      <div class="content-container">
+        <div class="topicHeader">
+          <span class="topicHeaderType">public void</span>
+          <span class="topicHeaderName">Contact()</span>
+        </div>
+        <div class="contact-container">
+          <div class="form-container">
+            <form id="contact-form" method="post" action="send_email.php">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required><br>
+
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" required><br>
+
+              <label for="topic">Topic:</label>
+              <input type="text" id="topic" name="topic" required><br>
+
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="4" required></textarea><br>
+
+              <button type="submit">Send</button>
+            </form>
+          </div>
+          <div class="social-media-container">
+            <div class="social-media-flex-container" >
+              <a class="social-media-text" href="https://github.com/iGeronimo" target="_blank"><img src="Images/Git-icon-white.svg.png"></a>
+              <div class="social-media-text">
+                <a class="social-media-text" href="https://github.com/iGeronimo" target="_blank">Github</a>
+              </div>
+              <a class="social-media-text" href="https://twitter.com/LehmanMathijs" target="_blank"><img src="Images/TwitterLogo.png"></a>
+              <div class="social-media-text">
+                <a class="social-media-text" href="https://twitter.com/LehmanMathijs" target="_blank">Twitter</a>
+              </div>
+              <a class="social-media-text" href="mailto:mathijslehman.ml@gmail.com"><img src="Images/MailLogo.png"></a>
+              <div class="social-media-text">
+                <a class="social-media-text" href="mailto:mathijslehman.ml@gmail.com">Mail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="status-message"></div>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+
+  </body>
+</html> 
