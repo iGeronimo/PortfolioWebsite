@@ -61,6 +61,11 @@ body
   font-weight: bold;
 }
 
+.highlight-text-blue{
+  color: #4361EE;
+  font-weight: bold;
+}
+
 /*#endregion*/
 
 /*#region site title*/
@@ -336,7 +341,8 @@ body
 
 .project-container{
   display:flex;
-  justify-content: space-between;
+  justify-content: justify-content;
+  text-align: left;
   margin: 0 auto;
   padding:20px
 }
@@ -347,9 +353,7 @@ body
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  justify-content:center;
-  align-items:center;
+  align-items: flex-start;
 }
 
 .project-image img{
@@ -367,6 +371,11 @@ body
   justify-content: center;
   align-items: center;
   color: #EDF2F4;
+}
+
+.project-tags{
+  color: white;
+  padding: 5px;
 }
 
 .inline-link{
