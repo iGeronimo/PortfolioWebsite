@@ -35,7 +35,7 @@ contactForm.addEventListener('submit', function (event) {
     });
 });
 
-const words = ['Pokemon', 'Outer Wilds', 'The Witness', 'Rocket League', 'Return of the Obra Dinn', 'Hollow Knight'];
+const words = ['Universe Generation', 'Path Ray Tracing', 'Height Mapping Terrain', 'TCP Chatroom', 'AI plays Classic Games'];
 let currentWordIndex = 0;
 
 // Function to update the current word and trigger the sliding effect
