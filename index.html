@@ -32,7 +32,7 @@
               </span>
 
             </div>
-            <div class="game-slider">
+            <div class="project-slider">
               Some of my projects:
               <div id="current-word">
                 Universe Generation
@@ -49,6 +49,46 @@
           <span class="topicHeaderType">private void</span>
           <span class="topicHeaderName">AboutMe()</span>
         </div>
+        <div class="about-container">
+          <div class="about-introduction">
+           I am a Gameplay Programmer currently located in 
+           <span class="highlight-text-yellow">
+            The Netherlands</span>.
+            I've played football for 16 years and, during my time
+            as an intern at
+            <span class="highlight-text-yellow">
+              Gamious</span>,
+            I learned that this helped me a lot with becoming a more 
+            <span class="highlight-text-yellow">
+              team-oriented
+            </span>
+            individual.<br>
+            Whilst at gamious I had the opportunity to work on an 
+            <span class="highlight-text-yellow">
+              RTS game
+            </span>
+            and after a month I was transferred to a bigger team to help
+            with a
+            <span class="highlight-text-yellow">
+              Wordplay game</span>.
+            For this I mostly worked on having an 
+            <span class="highlight-text-yellow">
+              adaptive UI across all platforms</span>.
+          </div>
+          <div class="about-softskills">
+            In my spare time I am an avid gamer, with a steam library that is 
+            too large to complete anytime soon. Besides this I am also a 
+            <span class="highlight-text-yellow">
+              keyboard-enthousiast
+            </span>
+            and almost always looking into anything that peaks my interest.
+            Through this I am always chasing 
+            <span class="highlight-text-yellow">
+              self-improvement
+            </span>
+            in the form of knowledge, skills or habits.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -56,16 +96,13 @@
       <div class="content-container">
         <div class="topicHeader">
           <span class="topicHeaderType">private void</span>
-          <span class="topicHeaderName">UniverseGeneration()</span>
+          <span class="topicHeaderName">Highlight()</span>
         </div>
         <div class="universe-gen-container">
           <div class="project-video">
             <div class="video-container">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/7AJd1YFYhrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
               </iframe>
-            </div>
-            <div class="universe-image">
-              <img src="Images/GeneratedUniverse.png" alt="Generated Universe">
             </div>
           </div>
           <div class="universe-description">
@@ -77,8 +114,9 @@
               a Finnish university.
               In this project I was mainly tasked with the space travel component.
               In the game, when you go on a space expedition, my code will
-              generate a 
-              It was was one of the more challenging and interesting projects 
+              generate a universe full of planets with different resources, danger levels
+              and travel risks.<br>
+              It was was one of the more challenging and interesting projects
               I have worked on.<br>
               <br>
               We published the game on 
@@ -90,6 +128,26 @@
                 <b>advertised</b>
               </span> 
               the game through google ads.
+            </div>
+          </div>
+        </div>
+        <div class="universe-gen-container">
+          <div class="universe-image">
+            <img src="Images/GeneratedUniverse.png" alt="Generated Universe">
+          </div>
+          <div class="universe-description">
+            <div class="universe-description-text">
+              The universe generation works through first spawning planets layer by layer.
+              It goes through several checks of distance, angle and proximity. When all layers
+              of planets have been completed the next step is to draw lines
+              between all the planets. The first set of lines is drawn from the last layer 
+              to its closest neighbour in an earlier layer. Repeating this process ensures
+              that all furthest planets are reachable. After this it is a reverse process
+              of first layer to closest in second layer (not a repeating an earlier connection).
+              And then lastly, connecting the planets within their own layer. All lines 
+              are checked to not intersect with one another and in the image
+              you can see the result. I'd like to revisit this script in the future
+              and make it more evenly spread and with better performance.
             </div>
           </div>
         </div>
@@ -166,9 +224,8 @@
             <div class="inline-link">
              The results of this small research and more can be found on this 
               <a class="social-media-text" href="https://github.com/iGeronimo/Advanced-Tools/wiki/Classic-game-training-times" target="_blank">
-                <span class="highlight-text-blue">
-                  <b>github page</b>
-                </span>
+                <span class="highlight-text-yellow">
+                  <b>github page</b></span>.
               </a>
             </div>
           </div>
