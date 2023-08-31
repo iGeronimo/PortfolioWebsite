@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
 :root {
-    --typewriterSpeed: 3s;
+    --typewriterSpeed: 1.5s;
     --amountSteps: 10;
     --typeSpeedDivStepSpeed: 750ms;
     font-family: 'IBM Plex Mono', monospace;
