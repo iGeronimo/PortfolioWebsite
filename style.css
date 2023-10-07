@@ -332,6 +332,8 @@ body {
     .about-container {
         display: flex;
         color: white;
+        align-content:center;
+        justify-content:space-around;
     }
 }
 
@@ -347,6 +349,7 @@ body {
     flex: 1;
     max-width: 700px;
     padding: 25px;
+    align-content:center;
 }
 
 
@@ -590,7 +593,7 @@ body {
         flex-basis: 0;
         padding-left: 100px;
         padding-right: 100px;
-        display: inline;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
