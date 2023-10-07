@@ -454,6 +454,82 @@ body {
 /*#endregion*/
 
 
+/*#region                                                                           WORK*/
+
+@media (orientation: portrait){
+    .work-container {
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+}
+
+@media (orientation: landscape){
+    .work-container {
+        display: flex;
+        justify-content: justify-content;
+        text-align: left;
+        margin: 0 auto;
+        padding-top: 20px
+    }
+}
+
+.work-image {
+    flex: 4;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.work-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media (orientation: portrait){
+    .work-description {
+        flex: 3;
+        flex-basis: 0;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        color: #0E131F;
+    }
+}
+
+@media (orientation: landscape){
+    .work-description {
+        flex: 3;
+        flex-basis: 0;
+        padding-left: 100px;
+        padding-right: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #0E131F;
+    }
+}
+
+
+.work-tags {
+    color: white;
+    padding: 5px;
+}
+
+.inline-link {
+    display: inline;
+    text-align: left;
+    align-items: left;
+}
+
+/*#endregion*/
+
+
 /*#region                                                                           PROJECT*/
 
 .project-title {
@@ -500,10 +576,10 @@ body {
         flex: 3;
         flex-basis: 0;
         padding-top: 20px;
-        display: flex;
+        display: inline;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: left;
         color: #EDF2F4;
     }
 }
@@ -514,7 +590,7 @@ body {
         flex-basis: 0;
         padding-left: 100px;
         padding-right: 100px;
-        display: flex;
+        display: inline;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -721,6 +797,8 @@ button[type="submit"]:hover {
     max-width: 100px;
     max-height: auto;
     object-fit: contain;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
@@ -730,13 +808,16 @@ button[type="submit"]:hover {
     padding: 20px;
     max-width: 20% 100px;
     max-height: auto;
+    content-align: center;
+    align-items: center;
 }
 
 .social-media-text {
     color: #EDF2F4;
-    text-align: left;
+    text-align: center;
     content-align: left;
     align-items: left;
+
 }
 
 
