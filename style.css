@@ -441,11 +441,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     position: relative;
     /* Added for video container */
     overflow: hidden;
     /* Added to hide any overflow from video */
+    text-align: left;
 }
 
 .video-container iframe {
@@ -462,6 +463,7 @@ body {
     /* 16:9 aspect ratio (9 / 16 * 100) */
     position: relative;
     overflow: hidden;
+    text-align: left;
 }
 
 
