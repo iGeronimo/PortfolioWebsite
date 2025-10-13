@@ -8,478 +8,252 @@
 </head>
 
 <body>
-    <div class="color-container-white">
-        <div class="content-container">
-            <div class="introduction">
-                <h1 class="title">
-                    <span class="headingIntro"></span>
-                    <span class="headingName">Mathijs Lehman : Portfolio</span>
-                </h1>
-                <div class="topicHeader">
-                    <span class="topicHeaderType">private string</span>
-                    <span class="topicHeaderName">Introduction()</span>
-                </div>
-                <p class="introAnimation">Greetings!</p>
-                <div class="intro-container">
-                    <div class="intro">
-                        I am
-                        <span class="highlight-text-red">
-                <b>Mathijs Lehman</b></span>, a Graduate of 
-                        <span class="highlight-text-red"> 
-                <b>Creative Media & Game Technologies</b></span>. I would love to work as a
-                        <span class="highlight-text-red">
-                <b>Unity Developer!</b>
-              </span>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#home" class="brand">ML</a>
+            <nav class="nav" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#featured">Featured</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="home" class="section-light hero">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal-on-scroll">
+                    <h1 class="title"><span class="headingIntro"></span><span class="headingName">Mathijs Lehman</span></h1>
+                    <p class="kicker">Unity Developer • Wrocław, Poland</p>
+                    <p class="introAnimation">Greetings!</p>
+                    <p class="lead">Graduate of <strong>Creative Media & Game Technologies</strong>. I love building playful, performant interactive experiences and polished tools.</p>
+                    <div class="project-slider">Some of my projects: <span id="current-word">Universe Generation</span></div>
+                    <div class="cta-row">
+                        <a class="btn" href="https://github.com/iGeronimo" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a class="btn btn-outline" href="#contact">Contact me</a>
                     </div>
-                    <div class="project-slider">
-                        Some of my projects:
-                        <div id="current-word">
-                            Universe Generation
+                </div>
+                <div class="hero-media reveal-on-scroll">
+                    <img src="Images/UnrealGameScreenshot.png" alt="Project preview" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section-dark">
+            <div class="container">
+                <h2 class="section-title">About me</h2>
+                <div class="about-grid">
+                    <div class="card-text reveal-on-scroll">
+                        I am a Unity Developer currently located in <span class="highlight-text-yellow">Wrocław, Poland</span>.
+                        Playing football for 16 years and developing games at <span class="highlight-text-yellow">OAMK</span>, <span class="highlight-text-yellow">Gamious</span> and <span class="highlight-text-yellow">Landell Games</span> has taught me to be a <span class="highlight-text-yellow">team‑oriented</span> individual.
+                        <br><br>
+                        At Gamious I contributed to an <span class="highlight-text-yellow">RTS</span> and later moved to a larger team to help with a <span class="highlight-text-yellow">wordplay game</span>, where I focused on <span class="highlight-text-yellow">adaptive UI across platforms</span>.
+                    </div>
+                    <div class="card-text reveal-on-scroll">
+                        In my spare time I’m an <span class="highlight-text-yellow">avid gamer</span> and <span class="highlight-text-yellow">keyboard enthusiast</span>. I love customizing peripherals and experimenting with new tools.
+                        <br><br>
+                        I’m a curious builder—whenever something piques my interest, I dig deep. This site was made <span class="highlight-text-yellow">without frameworks</span> to learn more about HTML, CSS, and JS. View the <a class="highlight-text-yellow" href="https://github.com/iGeronimo/PortfolioWebsite" target="_blank" rel="noopener noreferrer"><strong>source code</strong></a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured project -->
+        <section id="featured" class="section-light">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Featured: Digital Twin Cities</h2>
+                    <a class="section-link" href="https://github.com/iGeronimo/Digital-Twin-Cities" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+                <div class="featured-grid">
+                    <div class="featured-media reveal-on-scroll">
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/uiT9f27FPus?si=HNukIUqiJ79bI-iR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
+                    <div class="featured-copy reveal-on-scroll">
+                        During a 20-week project I worked with <strong>SmartCities</strong>, a research group at Saxion University of Applied Sciences. The game simulates designing smarter cities with daily needs within reach of citizens.
+                        Built with <strong>Unreal Engine 5</strong>, it’s my largest Unreal project so far. We researched extensively with one goal: involve more people in city planning.
+                        <div class="tags"><span class="tag">UE5</span><span class="tag">Blueprints</span><span class="tag">CitySim</span><span class="tag">C++</span><span class="tag">Lead</span><span class="tag">Team</span></div>
+                        <div class="feedback-slider"><div id="current-feedback">Mathijs was always positive, always open to feedback, and cooperative within the team. It was a pleasure working alongside him.</div></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="color-container-black">
-        <div class="content-container">
-            <div class="topicHeader">
-                <span class="topicHeaderType">private void</span>
-                <span class="topicHeaderName">AboutMe()</span>
-            </div>
-            <div class="about-container">
-                <div class="about-introduction">
-                    I am a Unity Developer currently located in
-                    <span class="highlight-text-yellow">
-                        Poland, Wroclaw</span>.
-                    Playing football for 16 years and developing games at
-                    <span class="highlight-text-yellow">
-                        OAMK</span>,
-                    <span class="highlight-text-yellow">
-                        Gamious</span>
-                    and
-                    <span class="highlight-text-yellow">
-                        Landell Games</span>,
-                    have taught me that I am a 
-                    <span class="highlight-text-yellow">
-                        team-oriented
-                    </span> individual.
-                    <br>
-                    <br> Whilst at Gamious I had the opportunity to contribute to the development of an
-                    <span class="highlight-text-yellow">
-                        RTS game
-                    </span> and after a month I was transferred to a bigger team to help with a
-                    <span class="highlight-text-yellow">
-                        Wordplay game</span>. For this I mostly worked on having an
-                    <span class="highlight-text-yellow">
-                    adaptive UI across all platforms</span>.
-                </div>
-                <div class="about-softskills">
-                    In my spare time I am an 
-                    <span class="highlight-text-yellow">
-                        avid gamer</span>, 
-                    with a steam library that is too large to complete anytime 
-                    soon. Besides this I am also a 
-                    <span class="highlight-text-yellow">
-                        keyboard-enthusiast</span>!
-                    I love working with cutting edge equipment and getting to
-                    customize my own peripherals is something that really excites me.<br>
-                    <br>
-                    Finding something that piques my interest always causes me to 
-                    go on a path of discovery to try and understand more about the 
-                    newfound topic.
-                    Through this behaviour I am always 
-                    <span class="highlight-text-yellow">
-                        expanding my knowledge or skills</span>.
-                    For example, this website was made by myself 
-                    <span class="highlight-text-yellow">
-                        without any frameworks
-                    </span>
-                    since I just wanted to learn more about HTML, CSS and java.
-                    Here you can find the 
-                    <span class="highlight-text-yellow">
-                        <b><a class="highlight-text-yellow" href="https://github.com/iGeronimo/PortfolioWebsite" target="_blank">
-                            Source Code</a></b></span>.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="color-container-white">
-        <div class="content-container">
-            <div class="topicHeader">
-                <span class="topicHeaderType">private void</span>
-                <span class="topicHeaderName">Highlight()</span>
-                <a class="social-media-text" href="https://github.com/iGeronimo/Digital-Twin-Cities" target="blank">
-                    <span style="font-size:12px; text-decoration: underline";  class="highlight-text-red">
-                        <b><i>[GitHub]</i></b>
-                    </span>
-                </a>
-            </div>
-            <div class="universe-gen-container">
-                <div class="project-video">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uiT9f27FPus?si=HNukIUqiJ79bI-iR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-              </iframe>
-                    </div>
-                </div>
-                <div class="universe-description">
-                    <div class="universe-description-text">
-                        During a 20 week long project I worked for 
-                        <span class="highlight-text-red">
-                            <b>SmartCities</b></span>, a research group at Saxion University of Applied Sciences.
-                            The game simulates how to build smarter cities with all your needs within range of the citizens.<br> 
-                            The project is build in 
-                            <span class=" highlight-text-red">
-                                Unreal Engine 5</span>, making it the biggest project I have build using the engine.
-                                We conducted a lot of research to ensure the goal of the game: Get more people involved in 
-                                city planning!<br>
-                    </div>
-                </div>
-            </div>
-            <div class="universe-gen-container">
-                <div class="universe-image">
-                    <img src="Images/CitySimOverview.png" alt="Generated Universe">
-                    <div class="project-tags">
-                        <span class="highlight-text-blue">
-                        Tags:
-                        </span>
-                        <span class="highlight-text-red">
-                            UE5, Blueprints, CitySim, C++, Lead, Group
-                        </span>
-                    </div>
-                </div>
-                <div class="universe-description">
-                    <div class="universe-description-text">
-                        During this 20 week project I took on the role of 
-                        <span class="highlight-text-red">
-                            Project Lead and Lead Developer</span>. 
-                        I was responsible for all the
-                        <span class="highlight highlight-text-red">
-                            communication
-                        </span> 
-                        with our client, keeping everyone to our 
-                        <span class="highlight-text-red">
-                            agile working structure
-                        </span> and making sure that everyone in our 8 people team was up to kept up to date on the 
-                        latest developments. I also made sure that besides being colleagues we felt united as a team.
-                        We worked hard together, motivating one another and helping whenever possible. 
-                        Over the course of 20 weeks we became a group of friends who all together made the final product a reality.
-                        <br>
-                        <br> I am very proud of my team and what we together have accomplished during this project.
-                        <br>
-                        <br>
-                        Feedback from my peers:<br>
-                        <div class="feedback-slider">
-                            <div id="current-feedback">
-                                Mathijs was always positive, always open to feedback, as shown in the multiple team discussions that we held, and cooperative within the team. It was a pleasure working alongside him
+        <!-- Projects -->
+        <section id="projects" class="section-dark">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <!-- Pass The Gass -->
+                    <article class="card reveal-on-scroll">
+                        <div class="card-media ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/7AJd1YFYhrM" title="Pass The Gass trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Pass The Gass</h3>
+                            <p class="card-text">Space tycoon built during an exchange at OAMK. I implemented procedural <strong>universe generation</strong> with varying resources, danger, and travel risk.</p>
+                            <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">Generation</span><span class="tag">Mobile</span><span class="tag">Group</span></div>
+                            <div class="card-actions">
+                                <a class="btn btn-sm" href="https://github.com/iGeronimo/PassTheGassPersonal" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a class="btn btn-sm btn-outline" href="https://play.google.com/store/apps/details?id=com.LuckyLanternStudios.PasstheGas&pli=1" target="_blank" rel="noopener noreferrer">Play Store</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </article>
 
-    <div class="color-container-black">
-        <div class="content-container">
-            <div class="topicHeader">
-                <span class="topicHeaderType">private void</span>
-                <span class="topicHeaderName">Portfolio()</span>
-            </div>
-            <div class="project-title">
-                Pass The Gass
-                <a class="social-media-text" href="https://github.com/iGeronimo/PassTheGassPersonal" target="blank">
-                    <span style="font-size:12px" class="highlight-text-yellow">
-                        <b><i>[GitHub]</i></b>
-                    </span>
-                </a>
-            </div>
-            <div class="project-container">
-                <div class="project-video">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7AJd1YFYhrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                        </iframe>
-                    </div>
-                
-                    <div class="project-tags">
-                        <span class="highlight-text-blue">
-                        Tags:
-                        </span>
-                        <span class="highlight-text-yellow">
-                        C#, Unity, Generation, Mobile, Group
-                        </span>
-                    </div>
-                </div>
-                <div class="project-description">
-                    This is a space tycoon game that was made as part of my exchange program with
-                    OAMK, a Finnish university. The game provides players with a new universe every time they set out on an expedition, because of my contribution. In the game, when you go on a space expedition,
-                    my code will generate a universe full of planets with different resources, danger levels and travel risks.<br> It was the most challenging and interesting project I have worked on.<br>
-                    <br>
-                    <div class="inline-link"> We published the game on
-                    <a class="social-media-text" href="https://play.google.com/store/apps/details?id=com.LuckyLanternStudios.PasstheGas&pli=1" target="_blank">
-                        <span class="highlight-text-yellow">
-                            <b>Google Playstore</b></span>.</a> 
-                            at the end of the exchange program and had a period in which we
-                    advertised the game through google ads.
-                    </div>
-                </div>
-            </div>
-            <div class="project-title">
-                Internship
-            </div>
-            <div class="project-container">
-                <div class="project-image">
-                    <img src="Images/WordsInProgressScreenShot.png" alt="WordsInProgress">
-                    <div class="project-tags">
-                        <span class="highlight-text-blue">
-                        Tags:
-                        </span>
-                        <span class="highlight-text-yellow">
-                         C#, Unity, RTS, UI, Mobile, Gamious
-                        </span>
-                    </div>
-                </div>
-                <div class="project-description">
-                    During my internship I worked on an RTS
-                    in it's final stages of development.
-                    The project had been in development already
-                    for a couple of years and it took me a moment
-                    to get used to the existing codebase.
-                    I worked mostly on bug fixing regarding team 
-                    assignment and path finding. After this I was put 
-                    to work on some UI, tooling and extra settings features.
-                    <br>
-                    <br>
-                    When this was finished I was moved to the Words in Progress team 
-                    which was getting ready to launch the game. I was tasked with improving the 
-                    existing UI by making it adaptable to anything between 
-                    ultra-wide and portrait resolutions.
-                    <br>
-                    <br>
-                    <div class="inline-link">
-                    Words in Progress has since been launched and can now be played from the 
-                    <a class="social-media-text" href="https://apps.apple.com/us/app/words-in-progress/id1021231678?platform=iphone" target="_blank">
-                        <span class="highlight-text-yellow">
-                            <b>Apple Store</b></span>.</a> 
-                    </div>
+                    <!-- Internship / Words in Progress -->
+                    <article class="card reveal-on-scroll">
+                        <img class="card-media" src="Images/WordsInProgressScreenShot.png" alt="Words in Progress" loading="lazy" />
+                        <div class="card-body">
+                            <h3 class="card-title">Internship</h3>
+                            <p class="card-text">Worked on an RTS in late development, improving pathfinding and team assignment; later improved <strong>adaptive UI</strong> for <em>Words in Progress</em> for ultra-wide to portrait.</p>
+                            <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">RTS</span><span class="tag">UI</span><span class="tag">Mobile</span><span class="tag">Gamious</span></div>
+                            <div class="card-actions">
+                                <a class="btn btn-sm btn-outline" href="https://apps.apple.com/us/app/words-in-progress/id1021231678?platform=iphone" target="_blank" rel="noopener noreferrer">App Store</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- AI Plays Classic Games -->
+                    <article class="card reveal-on-scroll">
+                        <img class="card-media" src="Images/BirdAgent.png" alt="ML Agents in Flappy Bird" loading="lazy" />
+                        <div class="card-body">
+                            <h3 class="card-title">AI Plays Classic Games</h3>
+                            <p class="card-text">Using Unity ML-Agents, I trained agents for Snake, Flappy Bird, and Dino Runner with parameter sweeps to optimize learning.</p>
+                            <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">ML</span><span class="tag">Solo</span></div>
+                            <div class="card-actions">
+                                <a class="btn btn-sm btn-outline" href="https://github.com/iGeronimo/Advanced-Tools/wiki/Classic-game-training-times" target="_blank" rel="noopener noreferrer">Write-up</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Height Mapping Terrain -->
+                    <article class="card reveal-on-scroll">
+                        <img class="card-media" src="Images/OpenGLHeightMapLighting.png" alt="OpenGL Height Mapping" loading="lazy" />
+                        <div class="card-body">
+                            <h3 class="card-title">Height Mapping Terrain</h3>
+                            <p class="card-text">A flat terrain mesh displaced by a height map with recalculated normals and lighting for realism.</p>
+                            <div class="tags"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">Shaders</span><span class="tag">Solo</span></div>
+                            <div class="card-actions">
+                                <a class="btn btn-sm btn-outline" href="https://github.com/iGeronimo/3D-Rendering" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Path Tracing -->
+                    <article class="card reveal-on-scroll">
+                        <img class="card-media" src="Images/PathTracingNiceReflections.png" alt="Path tracing reflections in Unity" loading="lazy" />
+                        <div class="card-body">
+                            <h3 class="card-title">Ray Path Tracing</h3>
+                            <p class="card-text">Unity scene with path tracing to model light bounces and reflections with up to 10 bounces.</p>
+                            <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">Shaders</span><span class="tag">Solo</span></div>
+                            <div class="card-actions">
+                                <a class="btn btn-sm btn-outline" href="https://github.com/iGeronimo/UnityShader" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- TCP Chatroom -->
+                    <article class="card reveal-on-scroll">
+                        <img class="card-media" src="Images/NetworkingTCPchatroom.png" alt="TCP chatroom" loading="lazy" />
+                        <div class="card-body">
+                            <h3 class="card-title">TCP Chatroom</h3>
+                            <p class="card-text">Unity chatroom using TCP with commands like proximity whisper and avatar skin changes.</p>
+                            <div class="tags"><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">Networking</span><span class="tag">Solo</span></div>
+                            <div class="card-actions">
+                                <a class="btn btn-sm btn-outline" href="https://github.com/iGeronimo/Networking-Prototype" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="project-title">
-                AI Plays Classic Games
-            </div>
-            <div class="project-container">
-                <div class="project-image">
-                    <img src="Images/BirdAgent.png" alt="AITraining">
-                    <div class="project-tags">
-                        <span class="highlight-text-blue">
-                        Tags:
-                        </span>
-                        <span class="highlight-text-yellow">
-                        C#, Unity, AI, Machine learning, Solo
-                        </span>
+        </section>
+
+        <!-- Skills / Experience -->
+        <section id="skills" class="section-light">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid reveal-on-scroll">
+                    <div class="skill-card">
+                        <h3>Languages</h3>
+                        <div class="logo-grid">
+                            <img src="Images/CplusplusLogo.png" alt="C++" loading="lazy">
+                            <img src="Images/CsharpLogo.png" alt="C#" loading="lazy">
+                            <img src="Images/PythonLogo.png" alt="Python" loading="lazy">
+                            <img src="Images/HtmlLogo.png" alt="HTML" loading="lazy">
+                            <img src="Images/CssLogo.png" alt="CSS" loading="lazy">
+                            <img src="Images/OpenGlLogo.png" alt="OpenGL" loading="lazy">
+                            <img src="Images/sfmlLogo.png" alt="SFML" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Software</h3>
+                        <div class="logo-grid">
+                            <img src="Images/UnityLogo.png" alt="Unity" loading="lazy">
+                            <img src="Images/UnrealLogo.png" alt="Unreal Engine" loading="lazy">
+                            <img src="Images/GitLogo.png" alt="Git" loading="lazy">
+                            <img src="Images/VScodeLogo.png" alt="VS Code" loading="lazy">
+                        </div>
                     </div>
                 </div>
-                <div class="project-description">
-                Using the Unity ML-agents library I created several different
-                classic games in which I trained the AI. Using
-                different parameters, I tried to optimize the learning
-                process for Snake, Flappy Bird and Dino Runner.
-                <br>
-                <br>
-                    <div class="inline-link">
-                        The results of this small research and more can be found on this 
-                        <a class="social-media-text" href="https://github.com/iGeronimo/Advanced-Tools/wiki/Classic-game-training-times" target="_blank">
-                            <span class="highlight-text-yellow">
-                                <b>Github page</b></span>.
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section-dark">
+            <div class="container contact-grid">
+                <div class="contact-left">
+                    <h2 class="section-title">Contact</h2>
+                    <form id="contact-form" method="post" action="send_email.php" class="reveal-on-scroll">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="topic">Topic</label>
+                        <input type="text" id="topic" name="topic" required>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Send</button>
+                        <div id="status-message" class="status-message" aria-live="polite"></div>
+                    </form>
+                </div>
+                <div class="contact-right reveal-on-scroll">
+                    <div class="socials">
+                        <a class="social" href="https://github.com/iGeronimo" target="_blank" rel="noopener noreferrer">
+                            <img src="Images/github-icon-white.jpg" alt="GitHub" loading="lazy"><span>iGeronimo</span>
+                        </a>
+                        <a class="social" href="https://leetcode.com/u/iGeronimo/" target="_blank" rel="noopener noreferrer">
+                            <img src="Images/LeetCodeColoured.png" alt="LeetCode" loading="lazy"><span>iGeronimo</span>
+                        </a>
+                        <a class="social" href="mailto:mathijslehman.ml@gmail.com">
+                            <img src="Images/MailLogo.png" alt="Email" loading="lazy"><span>mathijslehman.ml@gmail.com</span>
+                        </a>
+                        <a class="social" href="https://www.linkedin.com/in/mathijs-lehman/" target="_blank" rel="noopener noreferrer">
+                            <img src="Images/LinkedInLogo.png" alt="LinkedIn" loading="lazy"><span>Mathijs Lehman</span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="inline-link">
-                <div class="project-title" data-value="HEIGHT MAPPING TERRAIN">
-                    Height Mapping Terrain 
-                    <a class="social-media-text" href="https://github.com/iGeronimo/3D-Rendering" target="blank">
-                        <span style="font-size:12px" class="highlight-text-yellow">
-                            <b><i>[GitHub]</i></b>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="project-container">
-                <div class="project-image">
-                    <img src="Images/OpenGLHeightMapLighting.png" alt="Image 1">
-                    <div class="project-tags">
-                        <span class="highlight-text-blue">
-                            Tags:
-                        </span>
-                        <span class="highlight-text-yellow">
-                            C++, OpenGL, Shaders, Solo
-                        </span>
-                    </div>
-                </div>
-                <div class="project-description">
-                    A flat plane terrain mesh altered through the use of
-                    a black to white coloured height map.
-                    After this the normals are recalculated through the
-                    adjacent vertexes heights and some lighting
-                    is added to make it seem a little more realistic.
-                </div>
-            </div>
-            <div class="inline-link">
-                <div class="project-title">
-                    Ray Path Tracing
-                    <a class="social-media-text" href="https://github.com/iGeronimo/UnityShader" target="blank">
-                        <span style="font-size:12px" class="highlight-text-yellow">
-                            <b><i>[GitHub]</i></b>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="project-container">
-                <div class="project-image">
-                    <img src="Images/PathTracingNiceReflections.png" alt="PathTracing">
-                    <div class="project-tags">
-                        <span class="highlight-text-blue">
-                            Tags:
-                        </span>
-                        <span class="highlight-text-yellow">
-                            C#, Unity, Shaders, Solo
-                        </span>
-                    </div>
-                </div>
-                <div class="project-description">
-                    After trying my hand at lighting and shaders with the height mapping I did in OpenGL, I wanted to take it a step further in terms of realism. This scene was made in Unity and uses Path tracing to determine light reflections more accurately. In this image
-                    it shows up to 10 bounces of the light hitting any surface.
-                </div>
-            </div>
-            <div class="inline-link">
-                <div class="project-title">
-                    TCP Chatroom
-                    <a class="social-media-text" href="https://github.com/iGeronimo/Networking-Prototype" target="blank">
-                        <span style="font-size:12px" class="highlight-text-yellow">
-                            <b><i>[GitHub]</i></b>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="project-container">
-                <div class="project-image">
-                    <img src="Images/NetworkingTCPchatroom.png" alt="Chatroom">
-                    <div class="project-tags">
-                        <span class="highlight-text-blue">
-                            Tags:
-                        </span>
-                        <span class="highlight-text-yellow">
-                            C#, Unity, Networking, Solo
-                        </span>
-                    </div>
-                </div>
-                <div class="project-description">
-                    A chatroom application made in Unity that uses
-                    TCP and has several commands which, for example,
-                    let you change your in-game skin or whisper to 
-                    the people in close proximity to you.
-                  </div>
-            </div>
-          </div>
-          
+        </section>
+    </main>
+
+    <footer class="site-footer section-light">
+        <div class="container">
+            <p>© <span id="year"></span> Mathijs Lehman. Built without frameworks. <a href="https://github.com/iGeronimo/PortfolioWebsite" target="_blank" rel="noopener noreferrer">Source</a>.</p>
         </div>
-    </div>
+    </footer>
 
-    <div class="color-container-white">
-        <div class="content-container">
-            <div class="topicHeader">
-                <span class="topicHeaderType">private void</span>
-                <span class="topicHeaderName">Experience()</span>
-            </div>
-            <div class="experience">
-                <div class="experience-container">
-                    <div class="experience-column">
-                        <div class="experience-title">
-                            Languages
-                        </div>
-                        <div class="column-images">
-                            <img src="Images/CplusplusLogo.png">
-                            <img src="Images/CsharpLogo.png">
-                            <img src="Images/PythonLogo.png">
-                            <img src="Images/OpenGlLogo.png">
-                            <img src="Images/sfmlLogo.png">
-                            <img src="Images/HtmlLogo.png">
-                            <img src="Images/CssLogo.png">
-                        </div>
-                    </div>
-                    <div class="experience-column">
-                        <div class="experience-title">
-                            Software
-                        </div>
-                        <div class="column-images">
-                            <img src="Images/UnityLogo.png">
-                            <img src="Images/UnrealLogo.png">
-                            <img src="Images/GitLogo.png">
-                            <img src="Images/VScodeLogo.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="color-container-black">
-        <div class="content-container">
-            <div class="topicHeader">
-                <span class="topicHeaderType">public void</span>
-                <span class="topicHeaderName">Contact()</span>
-            </div>
-            <div class="contact-container">
-                <div class="form-container">
-                    <form id="contact-form" method="post" action="send_email.php">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required><br>
-
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" required><br>
-
-                        <label for="topic">Topic:</label>
-                        <input type="text" id="topic" name="topic" required><br>
-
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea><br>
-
-                        <button type="submit">Send</button>
-                    </form>
-                </div>
-                <div class="social-media-container">
-                    <div class="social-media-flex-container">
-                        <a class="social-media-text" href="https://github.com/iGeronimo" target="_blank"><img src="Images/github-icon-white.jpg"></a>
-                        <div class="social-media-text">
-                            <a class="social-media-text" href="https://github.com/iGeronimo" target="_blank">iGeronimo</a>
-                        </div>
-                        <a class="social-media-text" href="https://leetcode.com/u/iGeronimo/" target="_blank"><img src="Images/LeetCodeColoured.png"></a>
-                        <div class="social-media-text">
-                            <a class="social-media-text" href="https://leetcode.com/u/iGeronimo/" target="_blank">iGeronimo</a>
-                        </div>
-                        <a class="social-media-text" href="mailto:mathijslehman.ml@gmail.com"><img src="Images/MailLogo.png"></a>
-                        <div class="social-media-text">
-                            <a class="social-media-text" href="mailto:mathijslehman.ml@gmail.com">mathijslehman.ml@gmail.com</a>
-                        </div>
-                        <a class="social-media-text" href="https://www.linkedin.com/in/mathijs-lehman/" target="_blank"><img src="Images/LinkedInLogo.png"></a>
-                        <div class="social-media-text">
-                            <a class="social-media-text" href="https://www.linkedin.com/in/mathijs-lehman/" target="_blank">Mathijs Lehman</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="status-message"></div>
-        <br>
-        <br>
-    </div>
-    </div>
     <script src="script.js"></script>
-
-
 </body>
 
 </html>
