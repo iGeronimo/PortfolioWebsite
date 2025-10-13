@@ -971,5 +971,183 @@ button[type="submit"]:focus-visible { outline: 3px solid #93A5FF; outline-offset
     * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
 
+/* ===============================
+     Retro Black & White Theme
+     Apply by adding class="retro-bw crt" on <body>
+     =============================== */
+.retro-bw {
+    /* Monochrome tokens */
+    --bg: #0A0A0A;
+    --bg-dark: #000000;
+    --text: #EAEAEA;
+    --text-inverse: #F5F5F5;
+    --surface: #0F0F0F;
+    --surface-dark: #000000;
+    --primary: #EAEAEA;
+    --accent: #39FF14;
+    --warning: #EAEAEA;
+    --muted: #B3B3B3;
+    --shadow-1: none;
+    --shadow-2: none;
+    --radius: 6px;
+    --radius-sm: 4px;
+    font-family: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    letter-spacing: 0.2px;
+}
+
+/* Global look: no soft shadows, crisp borders */
+.retro-bw .site-header { background: rgba(0,0,0,0.85); border-bottom: 1px solid #FFF; }
+.retro-bw .brand { color: #FFF; text-shadow: none; }
+.retro-bw .nav a { color: #FFF; border-bottom: 1px dotted transparent; }
+.retro-bw .nav a:hover { border-bottom-color: #FFF; }
+.retro-bw .nav-toggle span { background: #FFF; }
+.retro-bw .section-light, .retro-bw .section-dark { background-image: none; }
+
+/* Hero */
+.retro-bw .kicker { color: var(--muted); }
+.retro-bw .lead { color: var(--text); }
+
+/* Buttons */
+.retro-bw .btn { background: transparent; color: #FFF; border: 1px solid #FFF; box-shadow: none; border-radius: 0; }
+.retro-bw .btn:hover { background: #FFF; color: #000; box-shadow: none; }
+.retro-bw .btn-outline { background: transparent; color: #FFF; border-color: #FFF; }
+.retro-bw .btn-sm { padding: 6px 10px; }
+
+/* Cards and containers */
+.retro-bw .card,
+.retro-bw .card-text,
+.retro-bw .skill-card,
+.retro-bw form,
+.retro-bw .social { background: transparent; border: 1px solid #FFF; border-radius: 0; box-shadow: none; }
+.retro-bw .card-body { color: var(--text); }
+.retro-bw .card-title { color: #FFF; }
+.retro-bw .projects-grid { gap: 18px; }
+
+/* Tags: square bracket vibe */
+.retro-bw .tag { background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Links */
+.retro-bw a { color: #FFF; text-decoration: none; }
+.retro-bw a:hover { background: #FFF; color: #000; }
+.retro-bw .section-link { border-bottom: 1px dotted #FFF; }
+
+/* Keep media in full color in retro mode */
+.retro-bw img,
+.retro-bw iframe { filter: none; }
+
+/* Forms */
+.retro-bw label { color: #FFF; }
+.retro-bw input[type="text"],
+.retro-bw input[type="email"],
+.retro-bw textarea { background: #000; color: #FFF; border: 1px solid #FFF; border-radius: 0; }
+.retro-bw button[type="submit"] { background: transparent; color: #FFF; border: 1px solid #FFF; border-radius: 0; }
+.retro-bw button[type="submit"]:hover { background: #FFF; color: #000; }
+
+/* Socials */
+.retro-bw .social { border: 1px solid #FFF; background: transparent; }
+.retro-bw .social:hover { background: #FFF; color: #000; }
+
+/* Footer */
+.retro-bw .site-footer { color: #EAEAEA; }
+.retro-bw .site-footer a { color: #FFF; border-bottom: 1px dotted #FFF; }
+
+/* Headings: keep gradient off, use pure white */
+.retro-bw .title,
+.retro-bw .headingIntro,
+.retro-bw .headingName { background: none; -webkit-text-fill-color: #FFF; -moz-text-fill-color: #FFF; color: #FFF; }
+
+/* Highlighted inline text uses accent */
+.retro-bw .highlight-text-red,
+.retro-bw .highlight-text-yellow,
+.retro-bw .highlight-text-blue {
+    color: var(--accent) !important;
+    text-shadow: 0 0 4px rgba(57, 255, 20, 0.5), 0 0 8px rgba(57, 255, 20, 0.35);
+}
+
+/* Also glow the rotating accent words */
+.retro-bw #current-word,
+.retro-bw #current-feedback {
+    text-shadow: 0 0 4px rgba(57, 255, 20, 0.5), 0 0 8px rgba(57, 255, 20, 0.35);
+}
+
+/* Topic/header lines */
+.retro-bw .topicHeader::after { background: #FFF; opacity: 0.3; }
+
+/* CRT Scanline effect (optional) */
+.crt::before {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none; z-index: 999;
+    /* More apparent global scanlines: higher opacity and tighter spacing */
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.18) 0 1px, transparent 1px 3px);
+    mix-blend-mode: overlay;
+    /* Subtle vertical drift to simulate running CRT */
+    animation: crt-scan-move 2s linear infinite;
+}
+.crt::after {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none; z-index: 998;
+    /* Slightly lighter vignette so scanlines remain visible */
+    box-shadow: inset 0 0 140px rgba(0,0,0,0.82);
+}
+
+/* Keyframes for global CRT scanline movement */
+@keyframes crt-scan-move {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-0.3px); }
+}
+
+/* Monospace link underline behavior only for nav/body text, not buttons */
+.retro-bw .nav a.btn { border: none; }
+
+/* Retro image treatment: return to normal color; scanlines provide the retro feel */
+.retro-bw .hero-media img,
+.retro-bw .universe-image img,
+.retro-bw .project-image img,
+.retro-bw .card .card-media {
+    filter: none;
+    transition: filter .2s ease;
+}
+.retro-bw .hero-media:hover img,
+.retro-bw .universe-image:hover img,
+.retro-bw .project-image:hover img,
+.retro-bw .card:hover .card-media {
+    filter: none;
+}
+
+/* Add local scanlines over image areas only (hide on hover) */
+.retro-bw .hero-media,
+.retro-bw .universe-image,
+.retro-bw .project-image { position: relative; }
+.retro-bw .hero-media::after,
+.retro-bw .universe-image::after,
+.retro-bw .project-image::after {
+    content: "";
+    position: absolute; inset: 0; pointer-events: none;
+    /* Stronger, tighter horizontal scanlines over media */
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.18) 0 1px, transparent 1px 3px);
+    mix-blend-mode: overlay;
+    opacity: .5;
+    transition: opacity .2s ease;
+    /* Gentle drift for local scanlines too */
+    animation: local-scan-move 8s linear infinite;
+}
+.retro-bw .hero-media:has(img:hover)::after,
+.retro-bw .universe-image:has(img:hover)::after,
+.retro-bw .project-image:has(img:hover)::after { opacity: 0; }
+
+/* Keyframes for local scanline movement */
+@keyframes local-scan-move {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+}
+
+/* Respect reduced motion: stop scanline animation */
+@media (prefers-reduced-motion: reduce) {
+    .crt::before,
+    .retro-bw .hero-media::after,
+    .retro-bw .universe-image::after,
+    .retro-bw .project-image::after { animation: none !important; }
+}
+
 
 /*#endregion*/
