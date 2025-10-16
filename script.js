@@ -4,7 +4,7 @@ const submitButton = document.querySelector('button[type="submit"]');
 const statusMessage = document.getElementById('status-message');
 
 if (contactForm && submitButton && statusMessage) {
-  contactForm.addEventListener('submit', function (event) {
+  contactForm.addEventListener('submit', function(event) {
     event.preventDefault();
     submitButton.disabled = true;
     submitButton.textContent = 'Processing...';
@@ -43,52 +43,52 @@ let currentWordIndex = 0;
 
 // Function to update the current word and trigger the sliding effect
 function changeWord() {
-    const currentWordElement = document.getElementById('current-word');
+  const currentWordElement = document.getElementById('current-word');
 
-    currentWordElement.style.opacity = 0;
+  currentWordElement.style.opacity = 0;
 
-    // After the fading out transition ends, update the content and fade in the next word
-    setTimeout(() => {
-      // Get the next word from the array
-      currentWordIndex = (currentWordIndex + 1) % words.length;
-      const nextWord = words[currentWordIndex];
+  // After the fading out transition ends, update the content and fade in the next word
+  setTimeout(() => {
+    // Get the next word from the array
+    currentWordIndex = (currentWordIndex + 1) % words.length;
+    const nextWord = words[currentWordIndex];
 
-      // Update the content
-      currentWordElement.textContent = nextWord;
+    // Update the content
+    currentWordElement.textContent = nextWord;
 
-      // Start fading in the next word
-      currentWordElement.style.opacity = 1;
-    }, 1000); // Adjust the delay (in milliseconds) to match the transition duration
-  }
+    // Start fading in the next word
+    currentWordElement.style.opacity = 1;
+  }, 1000); // Adjust the delay (in milliseconds) to match the transition duration
+}
 
-  const feedback = ['Mathijs was always positive, always open to feedback, as shown in the multiple team discussions that we held, and cooperative within the team. It was a pleasure working alongside him', 
+const feedback = ['Mathijs was always positive, always open to feedback, as shown in the multiple team discussions that we held, and cooperative within the team. It was a pleasure working alongside him',
   'Very motivated team player that is willing to listen to anything the team is struggling with. Provides quality work.',
-   'Well spoken and easy to get along with. Knows when to work and when to be casual.', 
-   'Mathijs is a charismatic person who knows when to be informal but also when to put the team to work.'];
-  let currentFeedbackIndex = 0;
+  'Well spoken and easy to get along with. Knows when to work and when to be casual.',
+  'Mathijs is a charismatic person who knows when to be informal but also when to put the team to work.'];
+let currentFeedbackIndex = 0;
 
-  function changeFeedback() {
-    const currentFeedbackElement = document.getElementById('current-feedback');
+function changeFeedback() {
+  const currentFeedbackElement = document.getElementById('current-feedback');
 
-    currentFeedbackElement.style.opacity = 0;
+  currentFeedbackElement.style.opacity = 0;
 
-    // After the fading out transition ends, update the content and fade in the next word
-    setTimeout(() => {
-      // Get the next word from the array
-      currentFeedbackIndex = (currentFeedbackIndex + 1) % feedback.length;
-      const nextFeedback = feedback[currentFeedbackIndex];
+  // After the fading out transition ends, update the content and fade in the next word
+  setTimeout(() => {
+    // Get the next word from the array
+    currentFeedbackIndex = (currentFeedbackIndex + 1) % feedback.length;
+    const nextFeedback = feedback[currentFeedbackIndex];
 
-      // Update the content
-      currentFeedbackElement.textContent = nextFeedback;
+    // Update the content
+    currentFeedbackElement.textContent = nextFeedback;
 
-      // Start fading in the next word
-      currentFeedbackElement.style.opacity = 1;
-    }, 1000); // Adjust the delay (in milliseconds) to match the transition duration
-  }
+    // Start fading in the next word
+    currentFeedbackElement.style.opacity = 1;
+  }, 1000); // Adjust the delay (in milliseconds) to match the transition duration
+}
 
-  // Call the changeWord function repeatedly with a time interval
-  setInterval(changeWord, 3000); // Adjust the interval (in milliseconds) between word changes
-  setInterval(changeFeedback, 6000);
+// Call the changeWord function repeatedly with a time interval
+setInterval(changeWord, 3000); // Adjust the interval (in milliseconds) between word changes
+setInterval(changeFeedback, 6000);
 
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
