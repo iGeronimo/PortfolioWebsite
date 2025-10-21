@@ -35,7 +35,6 @@
                     <p class="kicker">Unity Developer • Wrocław, Poland</p>
                     <p class="introAnimation">Greetings!</p>
                     <p class="lead">Graduate of <strong>Creative Media & Game Technologies</strong>. I love building playful, performant interactive experiences and polished tools.</p>
-                    <div class="project-slider">Some of my projects: <span id="current-word">Universe Generation</span></div>
                     <div class="cta-row">
                         <a class="btn" href="https://github.com/iGeronimo" target="_blank" rel="noopener noreferrer">GitHub</a>
                         <a class="btn btn-outline" href="#contact">Contact me</a>
@@ -43,6 +42,7 @@
                 </div>
                 <div class="hero-media reveal-on-scroll">
                     <img src="Images/UnrealGameScreenshot.png" alt="Project preview" loading="lazy" />
+                    <div class="project-slider">Some of my projects: <span id="current-word">Universe Generation</span></div>
                 </div>
             </div>
         </section>
@@ -51,6 +51,9 @@
         <section id="about" class="section-dark">
             <div class="container">
                 <h2 class="section-title">About me</h2>
+                <div class="about-actions reveal-on-scroll" style="margin: 8px 0 18px;">
+                    <button class="btn btn-outline btn-sm" id="start-typeracer">Type race this section</button>
+                </div>
                 <div class="about-grid">
                     <div class="card-text reveal-on-scroll">
                         I am a Unity Developer currently located in <span class="highlight-text-yellow">Wrocław, Poland</span>.
@@ -252,6 +255,40 @@
             <p>© <span id="year"></span> Mathijs Lehman. Built without frameworks. <a href="https://github.com/iGeronimo/PortfolioWebsite" target="_blank" rel="noopener noreferrer">Source</a>.</p>
         </div>
     </footer>
+
+    <!-- Type Racer Overlay -->
+    <div id="typeracer-overlay" class="tr-overlay" aria-hidden="true" tabindex="-1">
+        <div class="tr-modal" role="dialog" aria-modal="true" aria-labelledby="tr-title">
+            <div class="tr-topbar">
+                <h3 id="tr-title">Type Racer: About</h3>
+                <button class="tr-close" id="tr-exit" aria-label="Close">×</button>
+            </div>
+            <div class="tr-stats">
+                <span>WPM: <strong id="tr-wpm">0</strong></span>
+                <span>Accuracy: <strong id="tr-acc">100%</strong></span>
+                <span>Progress: <strong id="tr-prog">0%</strong></span>
+            </div>
+            <div class="tr-text" id="tr-text" aria-live="off"></div>
+            <div class="tr-actions">
+                <button class="btn btn-sm" id="tr-restart">Restart</button>
+                <button class="btn btn-sm btn-outline" id="tr-exit-2">Exit</button>
+            </div>
+            <div id="tr-result" class="tr-result" aria-live="assertive" hidden>
+                <h4>Results</h4>
+                <div class="tr-result-grid">
+                    <div><span class="tr-label">Time</span> <strong id="tr-time">0s</strong></div>
+                    <div><span class="tr-label">WPM</span> <strong id="tr-wpm-final">0</strong></div>
+                    <div><span class="tr-label">Accuracy</span> <strong id="tr-acc-final">0%</strong></div>
+                    <div><span class="tr-label">Correct</span> <strong id="tr-correct">0</strong></div>
+                    <div><span class="tr-label">Mistakes</span> <strong id="tr-mistakes">0</strong></div>
+                </div>
+                <div class="tr-result-actions">
+                    <button class="btn btn-sm" id="tr-play-again">Play again</button>
+                    <button class="btn btn-sm btn-outline" id="tr-close-result">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
