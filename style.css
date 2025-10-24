@@ -481,6 +481,7 @@ body {
     opacity: 0;
     animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1s) forwards;
     padding-bottom: 24px;
+    padding-top: 10px;
 }
 
 #current-feedback {
