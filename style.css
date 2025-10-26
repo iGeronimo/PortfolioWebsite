@@ -97,6 +97,10 @@ body {
 .btn-outline:hover { background: rgba(67,97,238,0.08); }
 .btn-sm { padding: 8px 10px; font-weight: 600; }
 
+/* Emphasized Resume button: black text on white background */
+.btn.btn-resume { background: #fff; color: #000; border: 1px solid #000; }
+.btn.btn-resume:hover { background: #f3f4f6; color: #000; box-shadow: var(--shadow-2); }
+
 .hero-media img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-2); display: block; }
 .hero-media { display: flex; flex-direction: column; gap: 8px; }
 
@@ -1084,6 +1088,10 @@ button[type="submit"]:focus-visible { outline: 3px solid #93A5FF; outline-offset
 .retro-bw .btn:hover { background: #FFF; color: #000; box-shadow: none; }
 .retro-bw .btn-outline { background: transparent; color: #FFF; border-color: #FFF; }
 .retro-bw .btn-sm { padding: 6px 10px; }
+
+/* Ensure resume button remains black on white in retro theme */
+.retro-bw .btn.btn-resume { background: #FFF; color: #000; border: 1px solid #000; }
+.retro-bw .btn.btn-resume:hover { background: #EDEDED; color: #000; }
 
 /* Cards and containers */
 .retro-bw .card,
