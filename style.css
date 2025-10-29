@@ -409,6 +409,31 @@ body {
     }
 }
 
+/* JS-driven typewriter override for the greeting line */
+.introAnimation.js-typewriter {
+    /* Make element shrink to text so border-caret aligns at the end */
+    width: max-content;
+    /* Keep a stable height even when text is fully deleted */
+    line-height: 1.4;
+    min-height: 1.9em; /* reserve one text line */
+    padding-block: 4px; /* small vertical padding to prevent layout jump */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.12em solid var(--text);
+    /* Blink the border caret */
+    animation: caret-blink-border 1s steps(2) infinite;
+}
+.introAnimation.js-typewriter::before,
+.introAnimation.js-typewriter::after {
+    /* Disable the original CSS typewriter overlay/caret */
+    content: none !important;
+    animation: none !important;
+}
+@keyframes caret-blink-border {
+    0%, 50% { border-right-color: var(--text); }
+    50.01%, 100% { border-right-color: transparent; }
+}
+
 
 /*#endregion*/
 

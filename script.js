@@ -123,6 +123,72 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ===============================
+// Looping typewriter for greeting (top of page)
+// Types and erases "greetings" in multiple languages
+// ===============================
+(function initGreetingTypewriter(){
+  const el = document.querySelector('.introAnimation');
+  if (!el) return;
+
+  // Apply JS-driven typewriter styling (disables the old CSS overlay)
+  el.classList.add('js-typewriter');
+
+  // Short, readable variants of "greetings" in different languages
+  const phrases = [
+    'Greetings!',          // EN
+    'Cześć!',              // PL
+    'Hoi!',                // NL
+    'Bonjour !',           // FR
+    '¡Hola!',              // ES
+    'Guten Tag!',          // DE
+    'こんにちは！',           // JA
+    'Привет!',             // RU
+    '안녕하세요!',             // KO
+    '你好！',                 // ZH
+    'Salut!',              // RO/FR informal
+  ];
+
+  const typeDelay = 90;      // ms per character while typing
+  const deleteDelay = 55;    // ms per character while deleting
+  const holdAfterType = 900; // ms to hold the full word
+  const holdAfterDelete = 300; // ms before starting next word
+
+  let iPhrase = 0;
+  let iChar = 0;
+  let deleting = false;
+
+  const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+
+  async function loop(){
+    while(true){
+      const phrase = phrases[iPhrase];
+      if (!deleting){
+        // Type forward
+        el.textContent = phrase.slice(0, iChar + 1);
+        iChar++;
+        if (iChar >= phrase.length){
+          await sleep(holdAfterType);
+          deleting = true;
+        }
+        await sleep(typeDelay);
+      } else {
+        // Delete backward
+        el.textContent = phrase.slice(0, Math.max(0, iChar - 1));
+        iChar--;
+        if (iChar <= 0){
+          deleting = false;
+          iPhrase = (iPhrase + 1) % phrases.length;
+          await sleep(holdAfterDelete);
+        }
+        await sleep(deleteDelay);
+      }
+    }
+  }
+
+  loop();
+})();
+
+// ===============================
 // Type Racer for About section
 // ===============================
 (function initTypeRacer(){
