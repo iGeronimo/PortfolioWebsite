@@ -138,13 +138,6 @@ body {
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
 .card-text { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: var(--text-inverse); padding: 18px; border-radius: var(--radius); box-shadow: var(--shadow-1); }
-/* Center text inside About "card-text" boxes horizontally and vertically without affecting other card text */
-#about .card-text {
-    display: flex;
-    align-items: center;   /* vertical */
-    justify-content: center; /* horizontal */
-    text-align: center;    /* center multi-line text */
-}
 
 /* Skills */
 .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }

@@ -134,18 +134,30 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   el.classList.add('js-typewriter');
 
   // Short, readable variants of "greetings" in different languages
-  const phrases = [
-    'Greetings!',          // EN
-    'Cześć!',              // PL
-    'Hoi!',                // NL
-    'Bonjour !',           // FR
-    '¡Hola!',              // ES
-    'Guten Tag!',          // DE
-    'こんにちは！',           // JA
-    'Привет!',             // RU
-    '안녕하세요!',             // KO
-    '你好！',                 // ZH
-    'Salut!',              // RO/FR informal
+  // Use hex HTML entities for non-ASCII characters to avoid encoding issues
+  const phrasesUnits = [
+    // EN: Greetings!
+    ['G','r','e','e','t','i','n','g','s','!'],
+    // PL: Cześć!
+    ['C','z','e','&#x015B;','&#x0107;','!'],
+    // NL: Hoi!
+    ['H','o','i','!'],
+    // FR: Bonjour!
+    ['B','o','n','j','o','u','r','!'],
+    // ES: ¡Hola!
+    ['&#x00A1;','H','o','l','a','!'],
+    // DE: Guten Tag!
+    ['G','u','t','e','n',' ','T','a','g','!'],
+    // JA: こんにちは！
+    ['&#x3053;','&#x3093;','&#x306B;','&#x3061;','&#x306F;','&#xFF01;'],
+    // RU: Привет!
+    ['&#x041F;','&#x0440;','&#x0438;','&#x0432;','&#x0435;','&#x0442;','!'],
+    // KO: 안녕하세요!
+    ['&#xC548;','&#xB155;','&#xD558;','&#xC138;','&#xC694;','!'],
+    // ZH: 你好！
+    ['&#x4F60;','&#x597D;','&#xFF01;'],
+    // RO: Salut!
+    ['S','a','l','u','t','!'],
   ];
 
   const typeDelay = 90;      // ms per character while typing
@@ -161,23 +173,23 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   async function loop(){
     while(true){
-      const phrase = phrases[iPhrase];
+      const units = phrasesUnits[iPhrase];
       if (!deleting){
-        // Type forward
-        el.textContent = phrase.slice(0, iChar + 1);
+        // Type forward (use innerHTML so entities render correctly)
+        el.innerHTML = units.slice(0, iChar + 1).join('');
         iChar++;
-        if (iChar >= phrase.length){
+        if (iChar >= units.length){
           await sleep(holdAfterType);
           deleting = true;
         }
         await sleep(typeDelay);
       } else {
         // Delete backward
-        el.textContent = phrase.slice(0, Math.max(0, iChar - 1));
+        el.innerHTML = units.slice(0, Math.max(0, iChar - 1)).join('');
         iChar--;
         if (iChar <= 0){
           deleting = false;
-          iPhrase = (iPhrase + 1) % phrases.length;
+          iPhrase = (iPhrase + 1) % phrasesUnits.length;
           await sleep(holdAfterDelete);
         }
         await sleep(deleteDelay);
