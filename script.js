@@ -61,34 +61,8 @@ function changeWord() {
   }, 1000); // Adjust the delay (in milliseconds) to match the transition duration
 }
 
-const feedback = ['Mathijs was always positive, always open to feedback, as shown in the multiple team discussions that we held, and cooperative within the team. It was a pleasure working alongside him',
-  'Very motivated team player that is willing to listen to anything the team is struggling with. Provides quality work.',
-  'Well spoken and easy to get along with. Knows when to work and when to be casual.',
-  'Mathijs is a charismatic person who knows when to be informal but also when to put the team to work.'];
-let currentFeedbackIndex = 0;
-
-function changeFeedback() {
-  const currentFeedbackElement = document.getElementById('current-feedback');
-
-  currentFeedbackElement.style.opacity = 0;
-
-  // After the fading out transition ends, update the content and fade in the next word
-  setTimeout(() => {
-    // Get the next word from the array
-    currentFeedbackIndex = (currentFeedbackIndex + 1) % feedback.length;
-    const nextFeedback = feedback[currentFeedbackIndex];
-
-    // Update the content
-    currentFeedbackElement.textContent = nextFeedback;
-
-    // Start fading in the next word
-    currentFeedbackElement.style.opacity = 1;
-  }, 1000); // Adjust the delay (in milliseconds) to match the transition duration
-}
-
 // Call the changeWord function repeatedly with a time interval
 setInterval(changeWord, 3000); // Adjust the interval (in milliseconds) between word changes
-setInterval(changeFeedback, 6000);
 
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
@@ -121,6 +95,61 @@ if ('IntersectionObserver' in window) {
 // Footer year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ===============================
+// Leaderboard-only overlay (openable from About)
+// ===============================
+(function initLeaderboardOverlay(){
+  const overlay = document.getElementById('leaderboard-overlay');
+  const listEl = document.getElementById('lb-list');
+  const openBtn = document.getElementById('open-leaderboard');
+  const closeButtons = [document.getElementById('lb-exit'), document.getElementById('lb-exit-2')].filter(Boolean);
+  const endpoint = 'leaderboard.php';
+  if (!overlay || !listEl) return;
+
+  async function fetchAndRender(){
+    try {
+      listEl.innerHTML = '';
+      const res = await fetch(endpoint + '?t=' + Date.now(), { cache: 'no-store' });
+      const data = await res.json();
+      const top = Array.isArray(data.top) ? data.top : [];
+      top.slice(0, 50).forEach((row, idx) => {
+        const li = document.createElement('li');
+        const name = (row && row.name) ? String(row.name) : 'Anonymous';
+        const score = (row && row.score) ? Number(row.score) : 0;
+        const wpm = (row && row.wpm) ? Number(row.wpm) : 0;
+        const time = (row && row.time) ? Number(row.time) : 0;
+        li.textContent = `#${idx+1} ${name} - ${score} pts (WPM ${wpm}, ${time}s)`;
+        listEl.appendChild(li);
+      });
+      if (!top.length){ listEl.innerHTML = '<li>No scores yet. Be the first!</li>'; }
+    } catch (e) {
+      listEl.innerHTML = '<li>Could not load leaderboard.</li>';
+    }
+  }
+
+  function escToClose(e){ if (e.key === 'Escape') close(); }
+  function open(){
+    overlay.setAttribute('aria-hidden', 'false');
+    overlay.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+    fetchAndRender();
+    setTimeout(() => overlay.focus(), 50);
+    document.addEventListener('keydown', escToClose);
+  }
+  function close(){
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    document.removeEventListener('keydown', escToClose);
+  }
+
+  // Expose for Type Racer submit success
+  window.openLeaderboardOverlay = open;
+
+  if (openBtn) openBtn.addEventListener('click', open);
+  closeButtons.forEach(btn => btn && btn.addEventListener('click', close));
+})();
 
 // ===============================
 // Looping typewriter for greeting (top of page)
@@ -168,28 +197,45 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   let iPhrase = 0;
   let iChar = 0;
   let deleting = false;
+  let paused = document.hidden === true;
 
   const sleep = (ms) => new Promise(res => setTimeout(res, ms));
 
+  // Decode HTML entities once to real strings, then split into code points
+  function decodeEntities(html) {
+    const span = document.createElement('span');
+    span.innerHTML = html;
+    return span.textContent || span.innerText || html;
+  }
+
+  const phrasesDecoded = phrasesUnits.map(units => decodeEntities(units.join('')));
+  const phrasesCodepoints = phrasesDecoded.map(str => Array.from(str));
+
+  // Pause typing while tab is hidden to save CPU/memory churn
+  document.addEventListener('visibilitychange', () => {
+    paused = document.hidden === true;
+  });
+
   async function loop(){
     while(true){
-      const units = phrasesUnits[iPhrase];
+      if (paused) { await sleep(300); continue; }
+      const cps = phrasesCodepoints[iPhrase];
       if (!deleting){
-        // Type forward (use innerHTML so entities render correctly)
-        el.innerHTML = units.slice(0, iChar + 1).join('');
+        // Type forward using textContent (faster/less churn than innerHTML)
+        el.textContent = cps.slice(0, iChar + 1).join('');
         iChar++;
-        if (iChar >= units.length){
+        if (iChar >= cps.length){
           await sleep(holdAfterType);
           deleting = true;
         }
         await sleep(typeDelay);
       } else {
         // Delete backward
-        el.innerHTML = units.slice(0, Math.max(0, iChar - 1)).join('');
+        el.textContent = cps.slice(0, Math.max(0, iChar - 1)).join('');
         iChar--;
         if (iChar <= 0){
           deleting = false;
-          iPhrase = (iPhrase + 1) % phrasesUnits.length;
+          iPhrase = (iPhrase + 1) % phrasesCodepoints.length;
           await sleep(holdAfterDelete);
         }
         await sleep(deleteDelay);
@@ -216,12 +262,18 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   const accFinalEl = document.getElementById('tr-acc-final');
   const correctEl = document.getElementById('tr-correct');
   const mistakesEl = document.getElementById('tr-mistakes');
+  const scoreEl = document.getElementById('tr-score');
+  const nameInput = document.getElementById('tr-name');
+  const submitBtn = document.getElementById('tr-submit-score');
+  const submitStatus = document.getElementById('tr-submit-status');
+  const leaderboardList = document.getElementById('tr-leaderboard');
   const playAgainBtn = document.getElementById('tr-play-again');
   const closeResultBtn = document.getElementById('tr-close-result');
   const exitButtons = [document.getElementById('tr-exit'), document.getElementById('tr-exit-2')].filter(Boolean);
   const restartBtn = document.getElementById('tr-restart');
 
   if (!startBtn || !overlay || !textEl || !wpmEl || !accEl || !progEl) return;
+  const leaderboardUrl = 'leaderboard.php';
 
   // Get the raw About text content (merge both cards)
   const aboutCards = document.querySelectorAll('#about .card-text');
@@ -413,12 +465,16 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     const correctCount = hits.reduce((a, b) => a + (b === 1 ? 1 : 0), 0);
     const mistakesCount = hits.reduce((a, b) => a + (b === 0 ? 1 : 0), 0);
     const acc = idx > 0 ? Math.max(0, Math.round((correctCount / idx) * 100)) : 100;
+    const score = correctCount * wpm; // scoring: correct chars × WPM
     if (timeEl) timeEl.textContent = `${elapsedSec}s`;
     if (wpmFinalEl) wpmFinalEl.textContent = String(wpm);
     if (accFinalEl) accFinalEl.textContent = `${acc}%`;
     if (correctEl) correctEl.textContent = String(correctCount);
     if (mistakesEl) mistakesEl.textContent = String(mistakesCount);
+    if (scoreEl) scoreEl.textContent = String(score);
     resultCard.hidden = false;
+    // Load leaderboard when results open
+    fetchLeaderboard().catch(()=>{});
   }
 
   startBtn.addEventListener('click', openOverlay);
@@ -427,4 +483,70 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   overlay.addEventListener('keydown', onKeyDown);
   if (playAgainBtn) playAgainBtn.addEventListener('click', () => { resultCard.hidden = true; resetRace(); overlay.focus(); });
   if (closeResultBtn) closeResultBtn.addEventListener('click', () => { resultCard.hidden = true; closeOverlay(); });
+
+  // Leaderboard interactions
+  async function fetchLeaderboard(){
+    if (!leaderboardList) return;
+    leaderboardList.innerHTML = '';
+    try {
+      const res = await fetch(leaderboardUrl + '?t=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error('Network');
+      const data = await res.json();
+      const top = Array.isArray(data.top) ? data.top : [];
+      renderLeaderboard(top);
+    } catch (e) {
+      // silently ignore
+    }
+  }
+
+  function renderLeaderboard(items){
+    if (!leaderboardList) return;
+    leaderboardList.innerHTML = '';
+    items.slice(0, 20).forEach((row, idx) => {
+      const li = document.createElement('li');
+      const name = (row && row.name) ? String(row.name) : 'Anonymous';
+      const score = (row && row.score) ? Number(row.score) : 0;
+      const wpm = (row && row.wpm) ? Number(row.wpm) : 0;
+      li.textContent = `#${idx+1} ${name} - ${score} pts (WPM ${wpm})`;
+      leaderboardList.appendChild(li);
+    });
+  }
+
+  async function submitScore(){
+    if (!submitBtn) return;
+    submitBtn.disabled = true;
+    if (submitStatus) submitStatus.textContent = 'Submitting…';
+    // Recompute in case UI changed
+    const timeStr = timeEl ? timeEl.textContent : '0s';
+    const timeSec = Number((timeStr || '0s').replace(/s$/, '')) || 0;
+    const wpm = Number(wpmFinalEl ? wpmFinalEl.textContent : '0') || 0;
+    const correct = Number(correctEl ? correctEl.textContent : '0') || 0;
+    const mistakes = Number(mistakesEl ? mistakesEl.textContent : '0') || 0;
+    const score = Number(scoreEl ? scoreEl.textContent : '0') || (correct * wpm);
+    let name = (nameInput && nameInput.value || '').trim();
+    if (!name) name = 'Anonymous';
+    name = name.slice(0, 24);
+    try {
+      const res = await fetch(leaderboardUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, score, wpm, correct, mistakes, time: timeSec })
+      });
+      const data = await res.json().catch(()=>({ ok:false }));
+      if (!res.ok || !data || data.ok === false){
+        throw new Error('Submit failed');
+      }
+  if (submitStatus) submitStatus.textContent = 'Saved!';
+  renderLeaderboard(Array.isArray(data.top) ? data.top : []);
+  // Open the dedicated leaderboard overlay instead of navigating away
+  setTimeout(() => { if (window.openLeaderboardOverlay) window.openLeaderboardOverlay(); }, 250);
+    } catch (e) {
+      if (submitStatus) submitStatus.textContent = 'Could not submit score.';
+    } finally {
+      setTimeout(()=>{ if (submitStatus) submitStatus.textContent = ''; }, 2000);
+      submitBtn.disabled = false;
+    }
+  }
+
+  if (submitBtn) submitBtn.addEventListener('click', submitScore);
 })();

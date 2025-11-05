@@ -53,8 +53,9 @@
         <section id="about" class="section-dark">
             <div class="container">
                 <h2 class="section-title">About me</h2>
-                <div class="about-actions reveal-on-scroll" style="margin: 8px 0 18px;">
-                    <button class="btn btn-outline btn-sm" id="start-typeracer">Type race this section</button>
+                <div class="about-actions reveal-on-scroll" style="margin: 8px 0 18px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <button class="btn btn-resume btn-sm" id="start-typeracer">Type race this section</button>
+                    <button class="btn btn-sm" id="open-leaderboard" aria-label="View leaderboard">View leaderboard</button>
                 </div>
                 <div class="about-grid">
                     <div class="card-text reveal-on-scroll">
@@ -325,11 +326,38 @@
                     <div><span class="tr-label">Accuracy</span> <strong id="tr-acc-final">0%</strong></div>
                     <div><span class="tr-label">Correct</span> <strong id="tr-correct">0</strong></div>
                     <div><span class="tr-label">Mistakes</span> <strong id="tr-mistakes">0</strong></div>
+                    <div><span class="tr-label">Score</span> <strong id="tr-score">0</strong></div>
+                </div>
+                <div class="tr-submit">
+                    <label for="tr-name" class="tr-label">Name</label>
+                    <input id="tr-name" maxlength="24" placeholder="Anonymous" />
+                    <button class="btn btn-sm" id="tr-submit-score">Submit score</button>
+                    <span id="tr-submit-status" class="tr-status" aria-live="polite"></span>
+                </div>
+                <div class="tr-leaderboard">
+                    <h5>Leaderboard</h5>
+                    <ol id="tr-leaderboard"></ol>
                 </div>
                 <div class="tr-result-actions">
                     <button class="btn btn-sm" id="tr-play-again">Play again</button>
                     <button class="btn btn-sm btn-outline" id="tr-close-result">Close</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Overlay -->
+    <div id="leaderboard-overlay" class="tr-overlay" aria-hidden="true" tabindex="-1">
+        <div class="tr-modal" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+            <div class="tr-topbar">
+                <h3 id="lb-title">Leaderboard</h3>
+                <button class="tr-close" id="lb-exit" aria-label="Close">x</button>
+            </div>
+            <div class="tr-leaderboard" style="margin:12px 14px;">
+                <ol id="lb-list"></ol>
+            </div>
+            <div class="tr-actions">
+                <button class="btn btn-sm btn-outline" id="lb-exit-2">Close</button>
             </div>
         </div>
     </div>
