@@ -18,6 +18,7 @@ body{
 .site-header .container{ display:flex; align-items:center; justify-content:space-between; height:64px; gap:12px; }
 .brand{ display:flex; align-items:center; gap:10px; color:var(--fg); text-decoration:none; font-weight:700; }
 .logo{ display:inline-grid; place-items:center; width:20px; height:20px; background:#fff; color:#000; border-radius:50%; font-size:14px; }
+.logo-img{ width:20px; height:20px; display:inline-block; border-radius:4px; vertical-align:middle; }
 .brand-text{ letter-spacing:.3px; }
 .nav .menu{ list-style:none; display:flex; gap:16px; margin:0; padding:0; align-items:center; flex-wrap:nowrap; }
 .nav .menu li{ flex:0 0 auto; }

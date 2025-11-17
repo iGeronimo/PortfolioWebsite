@@ -109,6 +109,12 @@ body {
 @media (max-width: 950px) { .featured-grid { grid-template-columns: 1fr; } }
 .featured-copy { color: var(--text); }
 
+/* Compact Featured layout for small logo-style media */
+.featured-compact .featured-grid { grid-template-columns: 0.7fr 1.3fr; align-items: center; }
+@media (max-width: 950px) { .featured-compact .featured-grid { grid-template-columns: 1fr; } }
+.featured-compact .featured-media { display: flex; align-items: center; justify-content: center; }
+.featured-compact .featured-logo { width: 128px; height: 128px; object-fit: contain; border-radius: var(--radius); box-shadow: var(--shadow-2); display: block; }
+
 /* Tags */
 .tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
 .tag { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 100px; background: rgba(67,97,238,0.12); color: var(--primary); font-weight: 600; font-size: 12px; }
