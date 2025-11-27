@@ -47,7 +47,7 @@ function changeWord() {
 
   currentWordElement.style.opacity = 0;
 
-  // After the fading out transition ends, update the content and fade in the next word
+  // After the fading out transition ends, updatep the content and fade in the next word
   setTimeout(() => {
     // Get the next word from the array
     currentWordIndex = (currentWordIndex + 1) % words.length;
