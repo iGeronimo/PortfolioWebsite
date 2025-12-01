@@ -4,17 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mindful Focus - Deep Work Timer & Website Blocker</title>
-  <meta name="description" content="A minimalist deep work timer with mindful check-ins, a distraction blocker, reflection log, and clean stats - built for flow." />
+  <meta name="description" content="A minimalist deep work timer with mindful check-ins, a distraction blocker, reflection log, and clean stats — built for flow." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="#top" aria-label="Mindful Focus home">
-        <img class="logo-img" src="../Images/icon-128.png" alt="Mindful Focus logo" width="20" height="20" />
+        <img class="logo-img" src="images/logo-128.svg" alt="Mindful Focus logo" width="20" height="20" />
         <span class="brand-text">Mindful Focus</span>
       </a>
       <nav class="nav">
@@ -25,7 +26,7 @@
           <li><a href="#how">How it works</a></li>
           <li><a href="#screens">Screenshots</a></li>
           <li><a href="#roadmap">Roadmap</a></li>
-          <li><a class="cta small" href="#get">Get the Extension</a></li>
+          <li><a class="cta small" href="https://chromewebstore.google.com/detail/mindful-focus/achhnoabdpdohohlkcfdaieogllkaaif">Get the Extension</a></li>
         </ul>
       </nav>
     </div>
@@ -35,12 +36,12 @@
     <section class="hero">
       <div class="container hero-inner">
   <h1>Mindful focus, without the noise</h1>
-  <p class="lead">A minimalist deep-work timer with mindful check-ins, a built-in blocker, and clear stats - so you can notice how you feel and work with more intention.</p>
+  <p class="lead">A minimalist deep-work timer with mindful check-ins, a built-in blocker, and clear stats—so you can notice how you feel and work with more intention.</p>
         <div class="cta-row" id="get">
           <a class="cta" href="https://chromewebstore.google.com/detail/mindful-focus/achhnoabdpdohohlkcfdaieogllkaaif" target="_blank" rel="noopener">Add to Chrome</a>
           <a class="cta secondary" href="https://github.com/iGeronimo/FocusAppExtension" target="_blank" rel="noopener">View on GitHub</a>
         </div>
-        <div class="mini-note">Catch yourself when you get distracted. Understand why you got distracted. Reflect upon it.</div>
+        <div class="mini-note">Take more control of what is allowed to distract you.</div>
       </div>
       <div class="noise-bg" aria-hidden="true"></div>
     </section>
@@ -91,17 +92,12 @@
           <div class="card">
             <div class="icon">📈</div>
             <h3>Clean stats</h3>
-            <p>See your sessions and top distraction reasons at a glance - on a crisp dark canvas.</p>
+            <p>See your sessions and top distraction reasons at a glance—on a crisp dark canvas.</p>
           </div>
           <div class="card">
             <div class="icon">🧠</div>
             <h3>Mindful check-ins</h3>
             <p>Brief emotional/mental check-ins to set intention, reduce stress, and keep your focus humane.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🔒</div>
-            <h3>Privacy-first</h3>
-            <p>Runs locally. No accounts, no servers, no adtech. You stay in control.</p>
           </div>
         </div>
       </div>
@@ -113,11 +109,7 @@
         <ol class="steps">
           <li>
             <h4>Set your times</h4>
-            <p>Choose Focus, Break, and Long Break lengths. Keep it simple - consistency beats perfection.</p>
-          </li>
-          <li>
-            <h4>Do a quick check-in</h4>
-            <p>Note your mood, energy, and intent. Align what you'll do with how you feel.</p>
+            <p>Choose Focus, Break, and Long Break lengths. Keep it simple—consistency beats perfection.</p>
           </li>
           <li>
             <h4>Run your pre-work checklist</h4>
@@ -127,6 +119,10 @@
             <h4>Stay on track</h4>
             <p>We'll block distracting sites while you work and show clear stats when you finish.</p>
           </li>
+          <li>
+            <h4>Do a quick check-in</h4>
+            <p>When you slip up, write down why. Understanding yourself always leads to a better work experience.</p>
+          </li>
         </ol>
       </div>
     </section>
@@ -135,12 +131,24 @@
       <div class="container">
         <h2>Screenshots</h2>
         <div class="grid screens">
-          <figure class="shot"><div class="shot-box">Popup - Timer</div><figcaption>Compact, distraction-free controls</figcaption></figure>
-          <figure class="shot"><div class="shot-box">Deep Work - Checklist</div><figcaption>Start each session with intention</figcaption></figure>
-          <figure class="shot"><div class="shot-box">Stats - Dark canvas</div><figcaption>See progress without the noise</figcaption></figure>
-          <figure class="shot"><div class="shot-box">Blocked - Focus guard</div><figcaption>One click to get back on task</figcaption></figure>
+          <figure class="shot">
+            <img src="images/Timer.png" alt="Popup - Timer" loading="lazy" />
+            <figcaption>Compact, distraction-free controls</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/Routine.png" alt="Deep Work - Checklist" loading="lazy" />
+            <figcaption>Start each session with intention</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/Stats.png" alt="Stats - Dark canvas" loading="lazy" />
+            <figcaption>See progress without the noise</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/FocusProtection.png" alt="Blocked - Focus guard" loading="lazy" />
+            <figcaption>One click to get back on task</figcaption>
+          </figure>
         </div>
-        <p class="mini-note">Replace these placeholders with real screenshots from your extension (site/screenshots).</p>
+        <p class="mini-note">Screenshots captured from the extension.</p>
       </div>
     </section>
 
@@ -149,8 +157,8 @@
         <h2>Roadmap</h2>
         <ul class="roadmap">
           <li>
-            <div class="row"><strong>Guided mindful check-ins</strong><span class="tag tag--inprogress">In Progress</span></div>
-            <p>Short prompts for mood, energy, and intention before each session.</p>
+            <div class="row"><strong>Cross-Platform support</strong><span class="tag tag--inprogress">In Progress</span></div>
+            <p>Start a focus session and sync this session across all your devices.</p>
           </li>
           <li>
             <div class="row"><strong>Mood trend in Stats</strong><span class="tag tag--planned">Planned</span></div>
@@ -165,7 +173,7 @@
             <p>Optional 60-second reset between sessions to lower stress.</p>
           </li>
           <li>
-            <div class="row"><strong>Firefox support</strong><span class="tag tag--planned">Planned</span></div>
+            <div class="row"><strong>Firefox support</strong><span class="tag tag--planned">To Be Updated</span></div>
             <p>Extend support beyond Chromium browsers.</p>
           </li>
         </ul>
@@ -176,12 +184,15 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="left">
-        <img class="logo-img" src="../Images/icon-128.png" alt="Mindful Focus logo" width="20" height="20" />
+        <img class="logo-img" src="images/logo-128.svg" alt="Mindful Focus logo" width="20" height="20" />
         <span style="margin-left:8px;">Mindful Focus</span>
       </div>
       <div class="right">
-        <a href="https://github.com/iGeronimo/FocusAppExtension" target="_blank" rel="noopener">GitHub</a>
-        <a href="../privacy-policy.md" target="_blank" rel="noopener">Privacy</a>
+          <a href="https://github.com/iGeronimo/FocusAppExtension/tree/chrome_version" target="_blank" rel="noopener">GitHub</a>
+          <span class="sep" aria-hidden="true">&bull;</span>
+          <a href="https://github.com/iGeronimo/FocusAppExtension/blob/chrome_version/privacy-policy.md" target="_blank" rel="noopener">Privacy</a>
+          <span class="sep" aria-hidden="true">&bull;</span>
+          <a href="https://mathijslehman.site" target="_blank" rel="noopener">Creator</a>
       </div>
     </div>
   </footer>

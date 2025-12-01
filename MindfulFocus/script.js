@@ -1,4 +1,4 @@
-// Focus landing - minimal JS
+// Focus landing – minimal JS
 (function(){
   const navToggle = document.getElementById('navToggle');
   const menu = document.getElementById('menu');

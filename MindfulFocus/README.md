@@ -4,9 +4,9 @@ A simple, dark, static landing page for the Focus extension.
 
 ## Structure
 
-- `index.html` - Main landing page with hero, features, how it works, screenshots, and FAQ.
-- `styles.css` - Minimalist, responsive dark theme matching the extension.
-- `script.js` - Mobile nav toggle and smooth in-page scrolling.
+- `index.html` – Main landing page with hero, features, how it works, screenshots, and FAQ.
+- `styles.css` – Minimalist, responsive dark theme matching the extension.
+- `script.js` – Mobile nav toggle and smooth in-page scrolling.
 
 ## Replace placeholders
 
